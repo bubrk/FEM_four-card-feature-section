@@ -1,0 +1,127 @@
+// Variables
+
+$primary-red: hsl(0, 78%, 62%);
+$primary-cyan: hsl(180, 62%, 55%);
+$primary-orange: hsl(34, 97%, 64%);
+$primary-blue: hsl(212, 86%, 64%);
+
+$neutral-DarkBlue: hsl(234, 12%, 34%);
+$neutral-GrayBlue: hsl(229, 6%, 66%);
+$neutral-LightGray: hsl(0, 0%, 98%);
+
+$font-size: 15px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 3rem;
+}
+
+.header {
+  text-align: center;
+  max-width: 34rem;
+  margin: auto;
+
+  & h3 {
+    font-size: 2.25rem;
+    color: $neutral-DarkBlue;
+  }
+
+  &__firstTitle {
+    font-weight: 200;
+  }
+
+  &__secondTitle {
+    font-weight: 600;
+  }
+
+  &__paragraph {
+    font-size: 15px;
+    font-weight: 400;
+    color: $neutral-GrayBlue;
+    margin-top: 1rem;
+  }
+}
+
+.cards-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 73rem;
+  padding: 0 3rem;
+  margin: 3rem auto;
+}
+
+.card {
+  border-radius: 6px;
+  min-height: 16rem;
+  padding: 2rem;
+  position: relative;
+
+  &.supervisor {
+    border-top: 5px solid $primary-cyan;
+  }
+  &.team {
+    border-top: 5px solid $primary-red;
+    margin-bottom: 1.5rem;
+  }
+  &.karma {
+    border-top: 5px solid $primary-orange;
+  }
+  &.calculator {
+    border-top: 5px solid $primary-blue;
+  }
+
+  &--shadow {
+    box-shadow: 0px 10px 25px -8px #bbbdc4;
+  }
+
+  &__title {
+    font-size: 1.45rem;
+    color: $neutral-DarkBlue;
+    font-weight: 600;
+  }
+
+  &__paragraph {
+    color: $neutral-GrayBlue;
+    font-size: 15px;
+    margin-top: 0.4rem;
+  }
+
+  &__icon {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .header {
+    padding: 0 2rem;
+  }
+
+  .cards-container {
+    grid-template-columns: auto;
+    margin: 4rem 0;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .header {
+    & h3 {
+      font-size: 1.5rem;
+    }
+  }
+}
